@@ -1,0 +1,577 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Full-Screen Section */
+section {
+    position: relative;
+    width: 100vw;
+    height: 100vh; 
+    overflow: hidden;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+}
+
+/* Position the navigation buttons fixed at the bottom */
+.buttons {
+    position: fixed;
+    border-radius: 30px;
+    bottom: 20px; 
+    left: 20px;   
+    right: 20px;
+    width: 50%; /* Default width for larger screens */
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    z-index: 11;
+    transition: width 0.3s ease, padding 0.3s ease; /* Smooth resize on smaller screens */
+    font-family: 'Arial', sans-serif; /* Replace with your preferred font */
+    font-weight: bold; /* Makes the text bold */
+
+}
+@media (max-width: 768px) {
+    .buttons {
+        width: 80%; /* Adjust width for smaller devices */
+        bottom: 10px; /* Bring closer to the screen bottom */
+        padding: 8px; /* Reduce padding */
+    }
+
+    .nav-link {
+        padding: 8px 12px; /* Compact padding */
+        font-size: 14px; /* Smaller font */
+    }
+}
+
+@media (max-width: 480px) {
+    .buttons {
+        width: 90%; /* Nearly full width */
+        padding: 5px; /* Minimal padding */
+    }
+
+    .nav-link {
+        padding: 6px 10px; /* Even more compact for very small screens */
+        font-size: 12px; /* Smallest font size */
+    }
+}
+
+/* General Home Styling */
+#home {
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100vw; /* Full screen width */
+    height: 100vh; /* Full screen height */
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: transparent; /* Ensures no background color */
+    background-image: none; /* Ensure no background image */
+}
+
+
+/* Left Side Info Box (Transparent Box with Text) */
+.info-box {
+    position: absolute;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    top: 50%; /* Adjust vertical position */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 500px; /* Set width */
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.info-box h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.info-box p {
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+
+
+/* Social Links Container - Clean and responsive */
+.social-links {
+    display: flex;
+    flex-direction: column; /* Stack the boxes vertically */
+    justify-content: center;
+    align-items: center; /* Center icons horizontally */
+    gap: 15px;
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 10px;
+}
+
+/* Individual Social Link Box - Consistent size and design */
+.social-box {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for box */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 80px; /* Set a fixed width for consistency */
+    height: 80px; /* Fixed height for uniformity */
+}
+
+/* Hover Effect for Social Box */
+.social-box:hover {
+    transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+/* Social Links Image - Clean and responsive */
+.social-box a img {
+    object-fit: contain; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for image */
+.social-box a:hover img {
+    transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+/* Responsive Design - Mobile Devices */
+@media (max-width: 768px) {
+    .social-links {
+        right: 10px; /* Adjust for smaller screens */
+        gap: 10px; /* Reduce gap */
+    }
+
+    .social-box {
+        width: 60px; /* Adjust width for mobile */
+        height: 60px; /* Adjust height for mobile */
+    }
+
+    .social-box a img {
+        width: 40px; /* Adjust image size for mobile */
+        height: 40px; /* Adjust image size for mobile */
+    }
+}
+
+
+
+
+/* About Section Styling - Clean layout */
+#about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 20px;
+    background-color: transparent;
+    color: #333;
+    gap: 20px; /* Space between cards */
+}
+
+/* About Card Styling - Consistent design */
+.about-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Heading Styling */
+.about-card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Paragraph Styling */
+.about-card p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+/* Styling for Unordered List */
+.about-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-card ul li {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+/* --- Responsive Design --- */
+
+/* Mobile Devices (up to 768px) */
+@media (max-width: 768px) {
+    #about {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .about-card {
+        width: 90%; /* Allow cards to take up more width */
+        margin: 10px 0; /* Adjust margin for stacked cards */
+        font-size: 0.9em;
+    }
+
+    .about-card h2 {
+        font-size: 1.2em;
+    }
+
+    .about-card p {
+        font-size: 0.95em;
+    }
+
+    .about-card ul li {
+        font-size: 0.9em;
+    }
+}
+
+/* Tablet Devices (up to 1024px) */
+@media (max-width: 1024px) {
+    .about-card {
+        width: 45%; /* Cards take 45% width on tablet */
+        font-size: 1em; /* Slightly larger text for tablets */
+    }
+
+    .about-card h2 {
+        font-size: 1.3em;
+    }
+}
+
+/* Large Screens (Desktops and above) */
+@media (min-width: 1025px) {
+    .about-card {
+        width: 300px; /* Fixed width for larger screens */
+    }
+
+    .about-card h2 {
+        font-size: 1.5em; /* Default heading size */
+    }
+}
+
+
+
+/* Skill Boxes */
+.skill-box {
+    position: absolute; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: #fff; 
+    width: 550px; 
+    height: 280px;
+    border-radius: 15px; 
+    padding: 10px; 
+    gap: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+/* Skill Box Images */
+.skill-box img {
+    width: 140px; 
+    height: 140px; 
+    position: absolute; 
+    z-index: 10; 
+    object-fit: contain; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.skill-box img:hover {
+    transform: scale(1.2); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+}
+
+/* Specific Positions for Each Box */
+#box1 {
+    top: 80px;
+    left: 100px;
+    position: absolute; 
+}
+
+#box1 img:nth-child(1) {
+    top: 30px;
+    left: 20px;
+    border-radius: 25px
+}
+
+#box1 img:nth-child(2) {
+    top: 30px;
+    left: 200px;
+    border-radius: 25px
+}
+
+#box1 img:nth-child(3) {
+    top: 30px;
+    left: 380px;
+    border-radius: 25px
+}
+
+#box1 img:nth-child(4) {
+    top: 130px;
+    left: 20px;
+    border-radius: 25px
+}
+
+#box1 img:nth-child(5) {
+    top: 130px;
+    left: 200px;
+    border-radius: 25px
+}
+
+#box1 img:nth-child(6) {
+    top: 130px;
+    left: 380px;
+    border-radius: 25px
+}
+
+/* Box 2 */
+#box2 {
+    bottom: 80px; 
+    left: 100px;
+    position: absolute;
+}
+
+#box2 img:nth-child(1) {
+    top: 55px;
+    left: 52px;
+    width: 100px; 
+    height: 100px; 
+    border-radius: 25px
+}
+
+#box2 img:nth-child(2) {
+    top: 55px;
+    left: 232px;
+    width: 100px;
+    height: 100px; 
+    border-radius: 25px
+}
+
+#box2 img:nth-child(3) {
+    top: 40px;
+    left: 400px;
+    width: 130px; 
+    height: 130px; 
+    border-radius: 25px
+}
+
+#box2 img:nth-child(4) {
+    top: 165px;
+    left: 55px;
+    width: 100px; 
+    height: 100px;
+    border-radius: 25px
+}
+
+/* Box 3 */
+#box3 {
+    top: 80px;
+    right: 100px;
+    position: absolute;
+}
+
+#box3 img:nth-child(1) {
+    top: 30px;
+    left: 20px;
+    border-radius: 25px
+}
+
+#box3 img:nth-child(2) {
+    top: 30px;
+    left: 200px;
+    border-radius: 25px
+}
+
+#box3 img:nth-child(3) {
+    top: 30px;
+    left: 380px;
+    border-radius: 25px
+}
+
+#box3 img:nth-child(4) {
+    top: 130px;
+    left: 20px;
+    border-radius: 25px
+}
+
+#box3 img:nth-child(5) {
+    top: 130px;
+    left: 200px;
+    border-radius: 25px
+}
+
+#box3 img:nth-child(6) {
+    top:130px;
+    left: 380px;
+    border-radius: 25px
+}
+
+/* Box 4 */
+#box4 {
+    bottom: 80px; 
+    right: 100px;
+    position: absolute;
+}
+
+#box4 img:nth-child(1) {
+    top: 55px;
+    left: 52px;
+    width: 90px; 
+    height: 90px; 
+    border-radius: 25px
+}
+
+#box4 img:nth-child(2) {
+    top: 55px;
+    left: 232px;
+    width: 90px; 
+    height: 90px; 
+    border-radius: 25px
+}
+
+#box4 img:nth-child(3) {
+    top: 55px;
+    left: 417px;
+    width: 90px; 
+    height: 90px; 
+    border-radius: 25px
+}
+
+
+
+/* Navigation Buttons */
+.nav-buttons {
+    position: absolute; 
+    bottom: 30px;
+    left: 30px;
+    text-align: left; 
+}
+
+.nav-link {
+    display: inline-block; 
+    margin: 5px 0; 
+    padding: 10px 20px; 
+    background-color: #ffffff; 
+    color: #000000; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; /* Hover effect */
+}
+
+.nav-link:hover {
+    background-color: #585858; /* Darker shade on hover */
+}
+
+
+
+/* Contact Section */
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: url('contact.png') no-repeat center center/cover;
+    color: #000000;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border: 2px solid #13ba3a; /* Highlight color on focus */
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #13ba3a;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0e6513;
+}
